@@ -36,6 +36,9 @@ namespace Simulator.Sensors
         {
             bridge.AddSubscriber<VehicleStateData>(Topic, data =>
             {
+                if (Time.timeScale == 0f)
+                    return;
+
                 if (data != null)
                 {
                     if (StateData.Blinker != data.Blinker)
