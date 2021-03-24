@@ -62,11 +62,11 @@ namespace Simulator.Sensors
                     if (StateData.HeadLight != data.HeadLight)
                     {
                         if (data.HeadLight == 0)
-                            Actions.CurrentHeadLightState = VehicleActions.HeadLightState.OFF;
+                            Actions.CurrentHeadLightState = HeadLightState.OFF;
                         else if (data.HeadLight == 1)
-                            Actions.CurrentHeadLightState = VehicleActions.HeadLightState.LOW;
+                            Actions.CurrentHeadLightState = HeadLightState.LOW;
                         else if (data.HeadLight == 2)
-                            Actions.CurrentHeadLightState = VehicleActions.HeadLightState.HIGH;
+                            Actions.CurrentHeadLightState = HeadLightState.HIGH;
                     }
                     if (StateData.Gear != data.Gear)
                     {
