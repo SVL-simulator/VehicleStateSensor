@@ -15,14 +15,12 @@ using UnityEngine;
 namespace Simulator.Sensors
 {
     [SensorType("Vehicle State", new[] { typeof(VehicleStateData) })]
-
     public class VehicleStateSensor : SensorBase
     {
         VehicleStateData StateData;
 
         VehicleActions Actions;
         IVehicleDynamics Dynamics;
-        
         public override SensorDistributionType DistributionType => SensorDistributionType.LowLoad;
 
         void Start()
