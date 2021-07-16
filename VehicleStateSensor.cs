@@ -74,10 +74,14 @@ namespace Simulator.Sensors
                     }
                     if (StateData.Gear != data.Gear)
                     {
-                        if (data.Gear == 1)
-                            Dynamics.ShiftReverse();
-                        else if (data.Gear == 0)
+                        if (data.Gear == (byte)GearPosition.Reverse)
+                        {
+                            Dynamics.ShiftReverseAutoGearBox();
+                        }
+                        else if (data.Gear == (byte)GearPosition.Drive)
+                        {
                             Dynamics.ShiftFirstGear();
+                        }
                     }
                     if (StateData.HandBrake != data.HandBrake)
                     {
